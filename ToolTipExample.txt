@@ -1,0 +1,11 @@
+System.setProperty("webdriver.chrome.driver", "G:\\selenium\\chromedriver.exe");
+		WebDriver driver= new ChromeDriver();
+
+		driver.navigate().to("http://leafground.com/pages/tooltip.html");
+		
+		WebElement toolTip=driver.findElement(By.xpath("//*[@id=\"age\"]"));
+		String tooltipValue=toolTip.getAttribute("title");
+		System.out.println(tooltipValue);
+		
+		//String toolText= toolTip.getText();
+		//System.out.println(toolText);

@@ -1,0 +1,22 @@
+ public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		System.setProperty("webdriver.chrome.driver", "G:\\selenium\\chromedriver.exe");
+		WebDriver driver= new ChromeDriver();
+
+		driver.navigate().to("http://leafground.com/pages/download.html");
+		
+		WebElement downloadLink=driver.findElement(By.partialLinkText("Excel"));
+		downloadLink.click();
+		
+		Thread.sleep(3000);
+		
+		File fileLocation= new File("C:\\Users\\DE admin\\Downloads");
+		File[] listOfFiles=fileLocation.listFiles();
+		
+		for (File file : listOfFiles) {
+		if(	file.getName().equals("testleaf.xlsx")) {
+			System.out.println("File Downloaded Successfully");
+			break;
+		}
+		}

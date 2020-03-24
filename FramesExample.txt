@@ -1,0 +1,35 @@
+                System.setProperty("webdriver.gecko.driver", "G:\\selenium\\geckodriver.exe");
+		WebDriver driver= new FirefoxDriver();
+
+		driver.navigate().to("http://leafground.com/pages/frame.html");
+
+
+
+
+
+		driver.switchTo().frame(0);
+
+		WebElement click1=driver.findElement(By.id("Click"));
+		click1.click();
+
+		String but1Value=driver.findElement(By.id("Click")).getText();
+		System.out.println(but1Value);
+
+		driver.switchTo().defaultContent();
+
+		driver.switchTo().frame(1);
+		List<WebElement> frames1 =driver.findElements(By.tagName("iframe"));
+		int totalFrames1=frames1.size();
+
+		System.out.println(totalFrames1);
+
+		driver.switchTo().frame(0);
+		WebElement click2=driver.findElement(By.id("Click1"));
+		click2.click();
+
+		driver.switchTo().defaultContent();
+
+		List<WebElement> frames =driver.findElements(By.tagName("iframe"));
+		int totalFrames=frames.size();
+
+		System.out.println(totalFrames);

@@ -1,0 +1,39 @@
+System.setProperty("webdriver.gecko.driver", "G:\\selenium\\geckodriver.exe");
+		WebDriver driver= new FirefoxDriver();
+
+		driver.navigate().to("http://leafground.com/pages/Window.html");
+
+		String mainWindow=driver.getWindowHandle();
+
+		WebElement but1=driver.findElement(By.id("home"));
+		but1.click();
+
+		Set<String> windowHandles =driver.getWindowHandles();
+
+		for (String newWind : windowHandles) {
+			driver.switchTo().window(newWind);
+		}
+		WebElement editPage=driver.findElement(By.xpath("//*[@id=\'post-153\']/div[2]/div/ul/li[1]"));
+		editPage.click();
+
+		driver.close();
+		driver.switchTo().window(mainWindow);
+
+		WebElement but2=driver.findElement(By.xpath("//*[@id=\'contentblock\']/section/div[2]/div/div/button"));
+		but2.click();
+
+		int totalWindows=driver.getWindowHandles().size();
+		System.out.println(totalWindows);
+
+		WebElement but3= driver.findElement(By.id("color"));
+		but3.click();
+
+		Set<String> multiHandles=driver.getWindowHandles();
+
+		for (String allWinds : multiHandles) {
+
+			if (!allWinds.equals(mainWindow)) {
+				driver.switchTo().window(allWinds);
+				driver.close();
+			}
+		}

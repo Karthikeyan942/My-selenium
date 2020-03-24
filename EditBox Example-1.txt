@@ -1,0 +1,24 @@
+                System.setProperty("webdriver.gecko.driver", "G:\\selenium\\geckodriver.exe");
+		WebDriver driver=new FirefoxDriver();
+		driver.get("http://leafground.com/pages/Edit.html");
+
+		WebElement emailBox= driver.findElement(By.id("email"));
+		emailBox.sendKeys("rathi@gmail.com");
+		
+		Thread.sleep(4000);
+		
+		WebElement appendBox= driver.findElement(By.xpath("//*[@id=\'contentblock\']/section/div[2]/div/div/input"));
+		appendBox.sendKeys("Name");
+		
+		Thread.sleep(4000);
+		
+		WebElement getText=driver.findElement(By.name("username"));
+		String theTextIs=getText.getAttribute("value");
+		System.out.println(theTextIs);
+		
+		WebElement clearText=driver.findElement(By.xpath("//*[@id=\'contentblock\']/section/div[4]/div/div/input"));
+		clearText.clear();
+		
+		WebElement disableBox=driver.findElement(By.xpath("//*[@id=\'contentblock\']/section/div[5]/div/div/input"));
+		boolean status=disableBox.isEnabled();
+		System.out.println(status);

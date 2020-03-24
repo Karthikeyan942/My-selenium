@@ -1,0 +1,36 @@
+                System.setProperty("webdriver.gecko.driver", "G:\\selenium\\geckodriver.exe");
+		WebDriver driver=new FirefoxDriver();
+
+		driver.get("http://leafground.com/pages/Dropdown.html");
+
+		WebElement dropDwn1=driver.findElement(By.id("dropdown1"));
+
+		Select select=new Select(dropDwn1);
+		select.selectByIndex(2);
+
+		WebElement dropDwn2=driver.findElement(By.name("dropdown2"));
+
+		Select select1=new Select(dropDwn2);
+		select1.selectByVisibleText("Selenium");
+
+		WebElement dropDwn3=driver.findElement(By.id("dropdown3"));
+
+		Select select2=new Select(dropDwn3);
+		select2.selectByValue("3");
+
+		WebElement dropDwn4=driver.findElement(By.className("dropdown"));
+
+		Select select3=new Select(dropDwn4);
+		int totalOpts=select3.getOptions().size();
+		System.out.println(totalOpts);
+
+		WebElement dropDwn5=driver.findElement(By.xpath("//*[@id=\'contentblock\']/section/div[5]/select"));
+
+		dropDwn5.sendKeys("load");
+
+		WebElement dropDwn6=driver.findElement(By.xpath("//*[@id=\"contentblock\"]/section/div[6]/select"));
+
+		Select select4=new Select(dropDwn6);
+		select4.selectByIndex(2);
+		select4.selectByValue("2");
+5:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/20205:36 PM 1/27/2020		select4.selectByValue("3");

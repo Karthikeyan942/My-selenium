@@ -1,0 +1,17 @@
+      
+                System.setProperty("webdriver.chrome.driver", "G:\\selenium\\chromedriver.exe");
+		WebDriver driver= new ChromeDriver();
+
+		driver.navigate().to("http://leafground.com/pages/selectable.html");
+		
+		List<WebElement> listofItems=driver.findElements(By.xpath("//*[@id=\'selectable\']/li"));
+		int totaList=listofItems.size();
+		System.out.println(totaList);
+	
+		Actions action=new Actions(driver);
+		
+		//action.keyDown(Keys.CONTROL).click(listofItems.get(2)).click(listofItems.get(5)).build().perform();
+		
+		action.dragAndDrop(listofItems.get(0), listofItems.get(5)).build().perform();
+	
+	

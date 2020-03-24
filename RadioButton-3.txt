@@ -1,0 +1,18 @@
+System.setProperty("webdriver.gecko.driver", "G:\\selenium\\geckodriver.exe");
+		WebDriver driver=new FirefoxDriver();
+
+		driver.get("http://leafground.com/pages/radio.html");
+		
+		WebElement button1=driver.findElement(By.id("no"));
+		button1.click();
+		
+		WebElement uncheck=driver.findElement(By.xpath("//*[@id=\'contentblock\']/section/div[2]/div/div/input[1]"));
+		WebElement checked=driver.findElement(By.xpath("//*[@id=\'contentblock\']/section/div[2]/div/div/input[2]"));
+		
+		boolean unChe=uncheck.isSelected();
+		boolean che=checked.isSelected();
+		
+		System.out.println("The button1 is checked :"+unChe + "  " + "The button2 is Checked :"+che);
+		
+		WebElement herAge=driver.findElement(By.xpath("//*[@id=\'contentblock\']/section/div[3]/div/div/input[3]"));
+		herAge.click();
